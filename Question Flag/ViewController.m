@@ -114,8 +114,6 @@
 {
     [self.arrivalTimer invalidate];
     self.timerLabel.text = @"00:00";
-    Problem *p = self.problemArray[0];
-    p.arrivalDate = [NSDate date];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[[NSArray arrayWithArray:[userDefaults arrayForKey:@"arrivalTimeArray"]] arrayByAddingObject:[NSNumber numberWithInteger:-[((Problem *)[self.problemArray lastObject]).startDate timeIntervalSinceNow]]] forKey:@"arrivalTimeArray"];
     [userDefaults synchronize];
@@ -123,8 +121,7 @@
 
 - (IBAction)problemSolved:(id)sender
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:[[NSArray arrayWithArray:[userDefaults arrayForKey:@"solveTimeArray"]] arrayByAddingObject:[NSNumber numberWithInteger:-[((Problem *)[self.problemArray[0] lastObject]).arrivalDate timeIntervalSinceNow]]] forKey:@"solveTimeArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"solveTimeArray"]] arrayByAddingObject:[NSNumber numberWithInteger:-[((Problem *)[self.problemArray lastObject]).arrivalDate timeIntervalSinceNow]]] forKey:@"solveTimeArray"];
 }
 
 @end

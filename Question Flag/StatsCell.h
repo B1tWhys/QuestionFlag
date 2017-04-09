@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StatsCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dataLabel;
 @end

@@ -12,8 +12,8 @@
 
 @interface ProblemSetupViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *urgencyPicker;
-@property (strong, nonatomic) NSArray *urgencyOptions;
 @property (weak, nonatomic) IBOutlet UIPickerView *solveTimePicker;
+@property (strong, nonatomic) NSArray *urgencyOptions;
 @end
 
 @implementation ProblemSetupViewController

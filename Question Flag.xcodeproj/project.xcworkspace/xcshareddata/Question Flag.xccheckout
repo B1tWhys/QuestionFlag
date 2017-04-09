@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0D021147-CA0B-4ADB-84DA-46671100DB1E</string>
+	<string>6804A950-B9E1-47F9-91FC-D007B024270B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Question Flag</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>69E77EE6-C577-4E0A-8904-400739DB4104</key>
-		<string>https://github.com/boldersky/QuestionFlagApp.git</string>
+		<key>6040BA76165331C1F3822606D34834E227CE7F1E</key>
+		<string>https://github.com/boldersky/QuestionFlag.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Question Flag.xcodeproj/project.xcworkspace</string>
+	<string>Question Flag.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>69E77EE6-C577-4E0A-8904-400739DB4104</key>
+		<key>6040BA76165331C1F3822606D34834E227CE7F1E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/boldersky/QuestionFlagApp.git</string>
+	<string>https://github.com/boldersky/QuestionFlag.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>69E77EE6-C577-4E0A-8904-400739DB4104</string>
+	<string>6040BA76165331C1F3822606D34834E227CE7F1E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>69E77EE6-C577-4E0A-8904-400739DB4104</string>
+			<string>6040BA76165331C1F3822606D34834E227CE7F1E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>QuestionFlag</string>
 		</dict>

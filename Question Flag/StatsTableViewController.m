@@ -7,6 +7,7 @@
 //
 
 #import "StatsTableViewController.h"
+#import "StatsCell.h"
 
 @interface StatsTableViewController ()
 @property (nonatomic, strong) NSArray *statSuperArray;
@@ -28,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    self.statSuperArray = @[[[NSUserDefaults standardUserDefaults] arrayForKey:@"arrivalTimeArray"], [[NSUserDefaults standardUserDefaults] arrayForKey:@"arrivalTimeArray"]];
+    self.statSuperArray = @[[[NSUserDefaults standardUserDefaults] arrayForKey:@"solveTimeArray"], [[NSUserDefaults standardUserDefaults] arrayForKey:@"solveTimeArray"]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,76 +53,34 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int rowCount = 0;
-    for (NSArray *subArray in self.statSuperArray) {
-        for (id i in subArray) {
-            id x = i;
-            x = x;
-            rowCount ++;
-        }
-    }
+//    int rowCount = 0;
+//    for (NSArray *subArray in self.statSuperArray) {
+//        for (id i in subArray) {
+//            id x = i;
+//            x = x;
+//            rowCount ++;
+//        }
+//    }
+    int rowCount = [self.statSuperArray count];
     return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"statsCell" forIndexPath:indexPath];
+    StatsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"statsCell" forIndexPath:indexPath];
     NSNumber *sum;
-    //int average = [(NSArray *)self.statSuperArray[[indexPath row]]];
-    for (NSNumber *item in (NSArray *)(self.statSuperArray[[indexPath row]])) {
+    int count = 0;
+    float average;
+    NSArray *dunno = (NSArray *)(self.statSuperArray[[indexPath row]]);
+    for (NSNumber *item in dunno) {
         sum = [NSNumber numberWithInt:([item integerValue] + [sum integerValue])];
+        count ++;
     }
-    int average = [sumIntValue];
+    
+    average = [sum floatValue] / (float)count;
+    cell.titleLabel.text = @"average response time";
+    cell.dataLabel.text = [NSString stringWithFormat:@"%f", average];
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
